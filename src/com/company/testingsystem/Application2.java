@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.stream.Stream;
 
 
 public class Application2 {
@@ -142,7 +143,8 @@ public class Application2 {
         }
     }
     private static void showUserList() {
-        //todo
+        Stream<User> sorted = Database.solveMap.keySet().stream().sorted();
+        sorted.forEach(System.out::println);
     }
 
     private static void showQuestionList() {
